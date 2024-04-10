@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+<center>
+<H1> Please Return to the Main Line in:
+<hr>
+<p id="who"></>
+<br>
+<p id="demo"></p>
+For:
+<br>
+<p id="eventname"></>
+<hr>
+<p id="clock"></p>
+<br>
+</H1>
+</center>
+<script>
+var who = prompt("Who should return", "Everyone");
+
+// Set the date we're counting down to
+var newtime = prompt("Update the time, keep format the same", "Apr 2, 2024 16:45:00");
+//var countDownDate = new Date("Mar 29, 2024 11:20:00").getTime();
+var countDownDate = new Date(newtime).getTime();
+var event = prompt("Enter an event name");
+
+document.getElementById("who").innerHTML = who;
+document.getElementById("who").style.color = "green";
+document.getElementById("eventname").innerHTML = event;
+document.getElementById("eventname").style.color = "green";
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+  var clock = new Date();
+  var date = new Date();
+  var timehours = clock.getHours();
+  var timeminutetes = clock.getMinutes()
+//  var timeyear = clock.getFullYear()
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML =  hours + " Hours "
+  + minutes + " Minutes " + seconds + " Seconds";
+  
+  document.getElementById("clock").innerHTML = ('Current Time: ' + ((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear() + ' - ' + date.getHours() + ':' + date.getMinutes())
+  
+  
+ //   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+ // + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "PLEASE RETURN TO MAIN LINE";
+	document.getElementById("demo").style.color = 'red';
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
