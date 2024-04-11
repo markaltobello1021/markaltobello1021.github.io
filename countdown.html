@@ -16,7 +16,7 @@ p {
 <H1> Please Return to the Main Line in:
 <hr>
 <br>
-<p id="demo"></p>
+<p id="countdown"></p>
 For:
 <br>
 <p id="eventname"></>
@@ -76,7 +76,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML =  hours + " Hours "
+  document.getElementById("countdown").innerHTML =  hours + " Hours "
   + minutes + " Minutes " + seconds + " Seconds";
   
   document.getElementById("clock").innerHTML = ('Current Time: ' + ((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear() + ' - ' + date.getHours() + ':' + date.getMinutes())
