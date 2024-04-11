@@ -11,6 +11,16 @@ p {
 </style>
 </head>
 <body>
+	<label for="meeting-time">Chose Return Date & Time:</label>
+
+<input
+  type="datetime-local"
+  id="meeting-time"
+  name="meeting-time"
+  value="2018-06-12T19:30"
+  min="2018-06-07T00:00"
+  max="2018-06-14T00:00" />
+  </html>
 <center>
 <p id="who"></>
 	<hr>
@@ -33,6 +43,7 @@ var who = prompt("Who should return", "Everyone");
 var newtime = prompt("Update the time, keep format the same", "Apr 2, 2024 16:45:00");
 //var countDownDate = new Date("Mar 29, 2024 11:20:00").getTime();
 var countDownDate = new Date(newtime).getTime();
+
 var event = prompt("Enter an event name");
 
 document.getElementById("who").innerHTML = who;
