@@ -40,7 +40,8 @@ For:
 var who = prompt("Who should return", "Everyone");
 
 // Set the date we're counting down to
-var newtime = prompt("Update the time, keep format the same", "Apr 2, 2024 16:45:00");
+//var newtime = prompt("Update the time, keep format the same", "Apr 2, 2024 16:45:00");
+	var newtime = document.getElementById("meeting-time").innerHTML;
 //var countDownDate = new Date("Mar 29, 2024 11:20:00").getTime();
 var countDownDate = new Date(newtime).getTime();
 
