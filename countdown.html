@@ -27,19 +27,19 @@ For:
 </center>
 <script>
 
-	ar position = {
-    left: event.screenX - window.screenX,
-    top: event.screenY - window.screenY,
-};
+	var monthNames = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ];
+function myFunction() {
+    var today = new Date();
+    var date = prompt("Please enter date.", today.getDate()+"-"+monthNames[today.getMonth()]+"-"+today.getFullYear());
 
-Front.promptDate({
-    position: position,
-    val: defaultDate,
-    before: forceSelectionBefore,
-    after: forceSelectionAfter
-}, function (date) {
-    console.log('User selected:', date);
-}));
+    if (date != null) {
+        x = "Hello! You have entered date as: " + date;
+        document.getElementById("demo").innerHTML = x;
+    }
+}
+
+	var somedate = myFunction();
 
 var who = prompt("Who should return", "Everyone");
 
