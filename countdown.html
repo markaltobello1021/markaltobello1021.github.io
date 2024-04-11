@@ -27,23 +27,20 @@ For:
 </center>
 <script>
 
-var p = Prompt.create();
+	ar position = {
+    left: event.screenX - window.screenX,
+    top: event.screenY - window.screenY,
+};
 
-p.title = "Insert Formatted Date";
+Front.promptDate({
+    position: position,
+    val: defaultDate,
+    before: forceSelectionBefore,
+    after: forceSelectionAfter
+}, function (date) {
+    console.log('User selected:', date);
+}));
 
-// Arrange the buttons in the order in which you prefer. The top button will be highlighted by default and can be selected by pressing the 'Return' key when prompted.
-p.addButton("yyyy-MM-dd");
-p.addButton("MMMM d, yyyy");
-p.addButton("MM/dd/yyyy");
-p.addButton("MM-dd-yyyy");
-p.addButton("MM/d/yy");
-p.addButton("MM-d-yy");
-
-// Show prompt
-p.show();
-
-var b = (p.buttonPressed)
-	
 var who = prompt("Who should return", "Everyone");
 
 // Set the date we're counting down to
